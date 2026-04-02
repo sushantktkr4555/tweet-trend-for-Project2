@@ -1,7 +1,9 @@
 pipeline {
     agent { label 'maven' }
 
-    stage('Build') {
+    stages {
+
+        stage('Build') {
             steps {
                 echo "Build started"
                 sh 'mvn clean package'
@@ -19,4 +21,5 @@ pipeline {
                 }
             }
         }
+    }
 }
