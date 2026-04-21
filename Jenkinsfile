@@ -38,7 +38,7 @@ pipeline {
         stage('Upload to JFrog') {
             steps {
                 sh '''
-                ${JFROG_CLI}/jf rt upload "target/*.jar" maven-repo-local/ \
+                ${JFROG_CLI}/jf rt upload "target/*.jar" "maven-repo-local/" \
                 --url=http://65.0.168.158:8082/artifactory \
                 --user=$JFROG_CREDS_USR \
                 --apikey=$JFROG_CREDS_PSW
