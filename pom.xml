@@ -116,11 +116,16 @@
 	</build>
 
 	<distributionManagement>
-		<repository>
-			<id>dev</id>
-			<url>file://jarstaging</url>
-		</repository>
-	</distributionManagement>
+    <repository>
+        <id>artifactory</id>
+        <url>http://65.0.168.158:8082/artifactory/maven-repo-local</url>
+    </repository>
+
+    <snapshotRepository>
+        <id>artifactory</id>
+        <url>http://65.0.168.158:8082/artifactory/maven-repo-local</url>
+    </snapshotRepository>
+</distributionManagement>
 
 
 </project>

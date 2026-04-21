@@ -1,6 +1,11 @@
 pipeline {
     agent { label 'maven' }
 
+    environment {
+        JFROG_CREDS = credentials('jfrog-cred')
+        JFROG_CLI = tool 'jfrog-cli'
+    }
+
     stages {
 
         stage('Build') {
@@ -19,6 +24,25 @@ pipeline {
                 withSonarQubeEnv('sonarqube-server') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
+            }
+        }
+
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+
+        stage('Upload to JFrog') {
+            steps {
+                sh """
+                ${JFROG_CLI}/jfrog rt upload "target/*.jar" maven-repo-local/ \
+                --url=http://65.0.168.158:8082/artifactory \
+                --user=$JFROG_CREDS_USR \
+                --apikey=$JFROG_CREDS_PSW
+                """
             }
         }
     }
