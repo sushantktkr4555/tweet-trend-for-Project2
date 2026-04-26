@@ -116,20 +116,19 @@
 	</build>
 
 	<distributionManagement>
- 
-  <repository>
-<id>artifactory</id>
-<url>http://<EC2-PUBLIC-IP>:http://43.205.126.21:8082/artifactory/maven-libs-release-local</url>
+          <repository>
+               <id>artifactory</id>
+               <url>http://43.205.126.21:8082/artifactory/maven-libs-release-local</url>
 </repository>
+ </distributionManagement>
  
- 
-</distributionManagement>
+<!-- </distributionManagement>
 
     <snapshotRepository>
         <id>artifactory</id>
         <url>http://43.205.126.21:8082/artifactory/maven-repo-local</url>
     </snapshotRepository>
-</distributionManagement>
+</distributionManagement> -->
 
 
 </project>
