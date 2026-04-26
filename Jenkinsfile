@@ -4,7 +4,7 @@ pipeline {
     // environment {
     //     JFROG_CREDS = credentials('jfrog-cred')
     //     JFROG_CLI = tool 'jfrog-cli'
-    }
+    //}
 
     stages {
 
@@ -67,4 +67,3 @@ stage('Build & Publish JAR') {
         //     }
         // }
     }
-}
