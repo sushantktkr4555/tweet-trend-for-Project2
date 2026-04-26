@@ -119,7 +119,7 @@
  
   <repository>
 <id>artifactory</id>
-<url>http://<EC2-PUBLIC-IP>:http://13.206.109.168:8082/artifactory/maven-libs-release-local</url>
+<url>http://<EC2-PUBLIC-IP>:http://43.205.126.21:8082/artifactory/maven-libs-release-local</url>
 </repository>
  
  
@@ -127,7 +127,7 @@
 
     <snapshotRepository>
         <id>artifactory</id>
-        <url>http://13.206.109.168:8082/artifactory/maven-repo-local</url>
+        <url>http://43.205.126.21:8082/artifactory/maven-repo-local</url>
     </snapshotRepository>
 </distributionManagement>
 
