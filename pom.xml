@@ -115,12 +115,12 @@
 		</plugins>
 	</build>
 
-	<distributionManagement>
+	<!-- <distributionManagement>
           <repository>
                <id>artifactory</id>
                <url>http://13.233.232.153:8082/artifactory/maven-libs-release-local</url>
 </repository>
- </distributionManagement>
+ </distributionManagement> -->
  
 <!-- </distributionManagement>
 
