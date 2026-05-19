@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM openjdk:27-ea-windowsservercore-ltsc2025
 
 WORKDIR /app
 
