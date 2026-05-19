@@ -37,7 +37,7 @@ pipeline {
 
                 docker run -d \
                   --name tweet-trend-container \
-                  -p 8080:8080 \
+                  -p 8080:8000 \
                   tweet-trend-app
                 '''
             }
