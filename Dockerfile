@@ -1,4 +1,4 @@
-FROM openjdk:27-ea-windowsservercore-ltsc2025
+FROM amazoncorretto:17
 
 WORKDIR /app
 
