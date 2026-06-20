@@ -21,26 +21,35 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Verify AWS Auth') {
             steps {
-                echo "Building Docker image..."
-                sh 'docker build -t tweet-trend-app .'
-            }
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',
+                          credentialsId: 'aws-ecr-cred']]) {
+                    sh 'aws sts get-caller-identity'
         }
+    }
+}
 
-        stage('Deploy Container') {
-            steps {
-                echo "Deploying Docker container..."
+        // stage('Build Docker Image') {
+        //     steps {
+        //         echo "Building Docker image..."
+        //         sh 'docker build -t tweet-trend-app .'
+        //     }
+        // }
 
-                sh '''
-                docker rm -f tweet-trend-container || true
+        // stage('Deploy Container') {
+        //     steps {
+        //         echo "Deploying Docker container..."
 
-                docker run -d \
-                  --name tweet-trend-container \
-                  -p 8080:8000 \
-                  tweet-trend-app
-                '''
-            }
-        }
+        //         sh '''
+        //         docker rm -f tweet-trend-container || true
+
+        //         docker run -d \
+        //           --name tweet-trend-container \
+        //           -p 8080:8000 \
+        //           tweet-trend-app
+        //         '''
+        //     }
+        // }
     }
 }
