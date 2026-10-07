@@ -66,6 +66,18 @@ pipeline {
                     '''
                 }
             }
+
+        stage('deploy'){
+            steps {
+                script{
+                    sh """
+                    chmod 777 deploy.sh
+                    ./deploy.sh
+                    """
+                }
+            }
+        }
+        
         }
 
 
