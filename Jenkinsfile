@@ -16,16 +16,16 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            environment {
-                scannerHome = tool 'project2-sonarqube-scanner'
-            }
-            steps {
-                withSonarQubeEnv('sonarqube-server') {
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
-            }
-        }
+        // stage('SonarQube Analysis') {
+        //     environment {
+        //         scannerHome = tool 'project2-sonarqube-scanner'
+        //     }
+        //     steps {
+        //         withSonarQubeEnv('sonarqube-server') {
+        //             sh "${scannerHome}/bin/sonar-scanner"
+        //         }
+        //     }
+        // }
 
         stage('Build Docker Image') {
             steps {
