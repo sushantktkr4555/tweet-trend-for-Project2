@@ -17,7 +17,7 @@ spec:
       - name: ecrcreds
       containers:
       - name:  srk-app
-        image: 886993844830.dkr.ecr.ap-south-1.amazonaws.com/katkar/sush-app:2.1.3
+        image: 886993844830.dkr.ecr.ap-south-1.amazonaws.com/katkar/sush-app:2.1.4
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
