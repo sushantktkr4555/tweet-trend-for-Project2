@@ -2,7 +2,7 @@ FROM amazoncorretto:17
 
 WORKDIR /app
 
-COPY target/demo-workshop-2.1.3.jar ttrend.jar
+COPY target/demo-workshop-2.1.4.jar ttrend.jar
 
 EXPOSE 8080
 
